@@ -1,12 +1,11 @@
 ---
-title: Klasifikasi Gambar CIFAR-10
+title: Group 1 Cifar10 App
 emoji: 🖼️
 colorFrom: blue
 colorTo: green
-sdk: streamlit
-sdk_version: "1.66.0"
-python_version: "3.11"
-app_file: app.py
+sdk: docker
+app_port: 7860
+short_description: Klasifikasi gambar CIFAR-10 dengan CNN (Streamlit)
 pinned: false
 ---
 
@@ -80,13 +79,19 @@ Hasil per gambar ditulis ke `results.csv` untuk bab evaluasi laporan.
 
 ## Deployment ke Hugging Face Spaces
 
-1. Buat Space baru di https://huggingface.co/new-space, SDK: **Streamlit**.
+URL publik: https://huggingface.co/spaces/mrezaaxx/group-1-cifar10-app
+
+Hugging Face tidak lagi menyediakan SDK Streamlit bawaan, sehingga aplikasi
+dijalankan sebagai **Docker Space** (`sdk: docker`). `Dockerfile` memasang
+Python 3.11 + `requirements.txt`, lalu menjalankan `streamlit run app.py` di port 7860.
+
+1. Buat Space baru di https://huggingface.co/new-space, SDK: **Docker** (Blank).
 2. Login dan push:
    ```bash
    pip install huggingface_hub
-   huggingface-cli login
+   hf auth login --add-to-git-credential
    git lfs install
-   git init
+   git init -b main
    git remote add origin https://huggingface.co/spaces/<user>/<nama-space>
    git add .
    git commit -m "Initial app"
