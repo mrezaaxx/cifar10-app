@@ -1,0 +1,3 @@
+[client]
+# Sembunyikan menu (⋮) dan tombol Deploy di kanan atas.
+toolbarMode = "minimal"

@@ -12,6 +12,19 @@ LOW_CONFIDENCE = 0.50
 
 st.set_page_config(page_title="Klasifikasi Gambar CIFAR-10", page_icon="🖼️")
 
+# Sembunyikan toolbar kanan atas, termasuk ikon GitHub/Fork dari Streamlit Cloud.
+st.markdown(
+    """
+    <style>
+    [data-testid="stToolbar"], [data-testid="stToolbarActions"],
+    [data-testid="stMainMenu"], [data-testid="stAppDeployButton"] {
+        display: none !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 config = load_config()
 
 
