@@ -1,14 +1,3 @@
----
-title: Group 1 Cifar10 App
-emoji: 🖼️
-colorFrom: blue
-colorTo: green
-sdk: docker
-app_port: 7860
-short_description: Klasifikasi gambar CIFAR-10 dengan CNN (Streamlit)
-pinned: false
----
-
 # Klasifikasi Gambar CIFAR-10 (Tugas Kelompok 2)
 
 Aplikasi web Streamlit yang menerima gambar (JPG/PNG) dan menampilkan prediksi
@@ -76,38 +65,6 @@ python evaluate_new_images.py
 ```
 
 Hasil per gambar ditulis ke `results.csv` untuk bab evaluasi laporan.
-
-## Deployment ke Hugging Face Spaces
-
-URL publik (Streamlit Community Cloud): https://group-1-cifar10.streamlit.app/
-
-Repo kode: https://github.com/mrezaaxx/cifar10-app
-
-Space Hugging Face (kode sama, saat ini dijeda karena kuota CPU akun 0):
-https://huggingface.co/spaces/mrezaaxx/group-1-cifar10-app
-
-Hugging Face tidak lagi menyediakan SDK Streamlit bawaan, sehingga aplikasi
-dijalankan sebagai **Docker Space** (`sdk: docker`). `Dockerfile` memasang
-Python 3.11 + `requirements.txt`, lalu menjalankan `streamlit run app.py` di port 7860.
-
-1. Buat Space baru di https://huggingface.co/new-space, SDK: **Docker** (Blank).
-2. Login dan push:
-   ```bash
-   pip install huggingface_hub
-   hf auth login --add-to-git-credential
-   git lfs install
-   git init -b main
-   git remote add origin https://huggingface.co/spaces/<user>/<nama-space>
-   git add .
-   git commit -m "Initial app"
-   git push -u origin main
-   ```
-   `.gitattributes` sudah mengatur `*.keras` dan `*.h5` lewat Git LFS.
-3. Tunggu status build **Running**, lalu uji URL publik.
-4. Space gratis akan tidur bila lama tidak dipakai. Buka URL beberapa menit sebelum demo.
-
-Cadangan: Streamlit Community Cloud — push repo ke GitHub, lalu deploy dari
-https://share.streamlit.io dengan file utama `app.py` dan Python 3.11.
 
 ## Keterbatasan
 
