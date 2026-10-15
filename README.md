@@ -79,7 +79,12 @@ Hasil per gambar ditulis ke `results.csv` untuk bab evaluasi laporan.
 
 ## Deployment ke Hugging Face Spaces
 
-URL publik: https://huggingface.co/spaces/mrezaaxx/group-1-cifar10-app
+URL publik (Streamlit Community Cloud): https://group-1-cifar10.streamlit.app/
+
+Repo kode: https://github.com/mrezaaxx/cifar10-app
+
+Space Hugging Face (kode sama, saat ini dijeda karena kuota CPU akun 0):
+https://huggingface.co/spaces/mrezaaxx/group-1-cifar10-app
 
 Hugging Face tidak lagi menyediakan SDK Streamlit bawaan, sehingga aplikasi
 dijalankan sebagai **Docker Space** (`sdk: docker`). `Dockerfile` memasang
